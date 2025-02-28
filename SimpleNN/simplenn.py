@@ -24,5 +24,7 @@ def dot_product(self, vector1, vector2):
 
 def feedforward(self, inputs):
     hidden_layer = [sigmoid(self.dot_product(inputs, [self.weights_input_hidden[j][i] for j in range(self.input_size)]) + self.bias_hidden[i]) for i in range(self.hidden_size)]
-    output_layer = [sigmoid(self.dot_product(hidden_layer, [self.weights_hidden_output[j][i] for j in range(hidden_size)]) + self.bias_ouput[i]) for i in range(self.output_size)]
+    output_layer = [sigmoid(self.dot_product(hidden_layer, [self.weights_hidden_output[j][i] for j in range(self.hidden_size)]) + self.bias_ouput[i]) for i in range(self.output_size)]
     return hidden_layer, output_layer
+
+
