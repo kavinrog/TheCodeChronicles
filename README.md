@@ -1,4 +1,4 @@
-# TheCodeChronicles 🚀
+# TheCodeChronicles🦁
 A fun repository for code creativity, machine learning, AI, and various projects! This is where I document my coding journey, focusing on ML, AI, data structures in Python, and exciting projects.
 
 ## 📌 About
@@ -10,3 +10,4 @@ Welcome to **TheCodeChronicles**! This repository is all about exploring and exp
 
 More projects coming soon! Stay tuned. 🚀
 
+![Aslan - I was there when it was written](https://media1.tenor.com/m/lhKIPlZoXSoAAAAd/aslan-i-was-there-when-it-was-written.gif)
