@@ -1,3 +1,20 @@
+"""
+Simple Neural Network Without Machine Learning Libraries
+
+Author: Kavinder Roghit Kanthen
+Date: 02-27-2025
+Last Modified: 02-27-2025
+
+Description:
+This script implements a simple neural network to solve the XOR problem.
+The network consists of:
+- 2 input neurons
+- 2 hidden neurons
+- 1 output neuron
+
+It uses the sigmoid activation function and is trained using backpropagation.
+"""
+
 import random
 import math
 
