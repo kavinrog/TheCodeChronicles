@@ -1,13 +1,52 @@
-# TheCodeChronicles🦁
-A fun repository for code creativity, machine learning, AI, and various projects! This is where I document my coding journey, focusing on ML, AI, data structures in Python, and exciting projects.
+# 📊 SHAP Explanation for XGBoost on California Housing Data
 
-## 📌 About
-Welcome to **TheCodeChronicles**! This repository is all about exploring and experimenting with code in a way that's engaging and fun. While daily logging is ambitious, the goal is to consistently contribute and share exciting projects related to ML, AI, and Python.
+This README explains the SHAP (SHapley Additive exPlanations) visualizations for an **XGBoost model** predicting **house prices** based on the **California Housing dataset**.
 
-## 🔥 Contributions
-1. **Simple Neural Network Without Machine Learning Libraries**
-  - Implemented a basic neural network from scratch using only Python's built-in modules.
+## 🏡 Dataset Overview
+The dataset includes features like:
+- **MedInc** (Median Income)
+- **HouseAge** (House Age)
+- **AveRooms** (Average Rooms per House)
+- **Latitude & Longitude** (Location)
+- **Population & Occupancy**
 
-More projects coming soon! Stay tuned. 🚀
+The model predicts house prices using these features.
 
-![Aslan - I was there when it was written](https://media1.tenor.com/m/lhKIPlZoXSoAAAAd/aslan-i-was-there-when-it-was-written.gif)
+---
+
+## 🔹 **SHAP Decision Plot**
+![SHAP Decision Plot](./Screenshot_2025-03-01_at_6.20.31_PM.png)
+
+### 📌 What it Shows:
+- How **each feature affects a single prediction**.
+- The **blue line** traces how features push the price up or down.
+- **Key Influence**: **MedInc, Latitude, and Longitude** have the biggest impact.
+
+---
+
+## 🔹 **SHAP Force Plot**
+![SHAP Force Plot](./Screenshot_2025-03-01_at_6.20.44_PM.png)
+
+### 📌 What it Shows:
+- **How a prediction was made for one house**.
+- **Blue** pushes the price **down**, **red** pushes it **up**.
+- **MedInc, Latitude, and AveOccup** strongly influence this prediction.
+
+---
+
+## 🔹 **SHAP Summary Plot**
+![SHAP Summary Plot](./Screenshot_2025-03-01_at_6.20.52_PM.png)
+
+### 📌 What it Shows:
+- **Overall feature importance across all predictions**.
+- **Red = High feature value, Blue = Low feature value**.
+- **MedInc, Latitude, and Longitude** are the most important.
+
+---
+
+## 🎯 **Conclusion**
+- **MedInc (Income) is the strongest predictor** of house prices.
+- **Location (Latitude & Longitude) also plays a big role**.
+- SHAP makes model decisions **explainable and transparent**.
+
+🚀 **SHAP helps us understand how AI makes predictions!**
