@@ -15,7 +15,7 @@ The model predicts house prices using these features.
 ---
 
 ## 🔹 **SHAP Decision Plot**
-![SHAP Decision Plot](./Screenshot_2025-03-01_at_6.20.31_PM.png)
+![SHAP Decision Plot](./Decision%20Plot.png)
 
 ### 📌 What it Shows:
 - How **each feature affects a single prediction**.
@@ -25,7 +25,7 @@ The model predicts house prices using these features.
 ---
 
 ## 🔹 **SHAP Force Plot**
-![SHAP Force Plot](./Screenshot_2025-03-01_at_6.20.44_PM.png)
+![SHAP Force Plot](./Force%20Plot.png)
 
 ### 📌 What it Shows:
 - **How a prediction was made for one house**.
@@ -35,7 +35,7 @@ The model predicts house prices using these features.
 ---
 
 ## 🔹 **SHAP Summary Plot**
-![SHAP Summary Plot](./Screenshot_2025-03-01_at_6.20.52_PM.png)
+![SHAP Summary Plot](./Summary%20Plot.png)
 
 ### 📌 What it Shows:
 - **Overall feature importance across all predictions**.
