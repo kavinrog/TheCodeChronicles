@@ -7,6 +7,10 @@ Welcome to **TheCodeChronicles**! This repository is all about exploring and exp
 ## 🔥 Contributions
 1. **Simple Neural Network Without Machine Learning Libraries**
   - Implemented a basic neural network from scratch using only Python's built-in modules.
+2. **SHAP Explanation for XGBoost on California Housing Data**
+  - SHAP visualizations for XGBoost on the California Housing dataset reveal how features like MedInc, Latitude, and Longitude influence house price predictions.
+3. **Gap Statistic Method for Finding Optimal Clusters**
+  - A statistical approach to determine the optimal number of clusters by comparing actual clustering performance with a random baseline.
 
 More projects coming soon! Stay tuned. 🚀
 
