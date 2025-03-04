@@ -53,7 +53,7 @@ X, _ = make_blobs(n_samples=300, centers=5, cluster_std=1.0, random_state=42)
 # Compute the Gap Statistic
 optimal_k, gap_values = compute_gap_statistic(X, k_max=10)
 
-# Plot the Gap Statistic results
+# Plot the Gap Statistic result
 plt.figure(figsize=(8,5))
 plt.plot(range(1, 11), gap_values, marker='o', linestyle='--')
 plt.xlabel("Number of Clusters (K)")
