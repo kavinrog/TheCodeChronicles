@@ -16,7 +16,11 @@ from sklearn.metrics import pairwise_distances
 from sklearn.datasets import make_blobs
 
 def compute_gap_statistic(X, k_max=10, B=10):
+    """
+    Computes the Gap Statistic for clustering
+    """
     def within_cluster_dispersion(X, labels, n_clusters):
+        """Computes the sum of squared distances for given cluster labels."""
         dispersion = 0
         for i in range(n_clusters):
             cluster_points = X[labels == i]
@@ -28,6 +32,7 @@ def compute_gap_statistic(X, k_max=10, B=10):
     for k in range(1, k_max + 1):
         kmeans = KMeans(n_clusters=k, random_state=42).fit(X)
         actual_dispersion = within_cluster_dispersion(X, kmeans.labels_, k)
+        # Generate B random datasets
         reference_disps = []
         for _ in range(B):
             X_random = np.random.uniform(X.min(axis=0), X.max(axis=0), X.shape)
@@ -42,9 +47,13 @@ def compute_gap_statistic(X, k_max=10, B=10):
     
     return optimal_k, gap_values
 
+# Create a synthetic dataset
 X, _ = make_blobs(n_samples=300, centers=5, cluster_std=1.0, random_state=42)
+
+# Compute the Gap Statistic
 optimal_k, gap_values = compute_gap_statistic(X, k_max=10)
 
+# Plot the Gap Statistic results
 plt.figure(figsize=(8,5))
 plt.plot(range(1, 11), gap_values, marker='o', linestyle='--')
 plt.xlabel("Number of Clusters (K)")
