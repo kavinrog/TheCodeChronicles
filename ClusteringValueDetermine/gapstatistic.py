@@ -33,3 +33,12 @@ def compute_gap_statistic(X, k_max=10, B=10):
 
 X, _ = make_blobs(n_samples=300, centers=5, cluster_std=1.0, random_state=42)
 optimal_k, gap_values = compute_gap_statistic(X, k_max=10)
+
+plt.figure(figsize=(8,5))
+plt.plot(range(1, 11), gap_values, marker='o', linestyle='--')
+plt.xlabel("Number of Clusters (K)")
+plt.ylabel("Gap Statistic")
+plt.title("Gap Statistic Method for Finding Optimal Clusters")
+plt.axvline(x=optimal_k, linestyle="--", color="red", label=f"Optimal K = {optimal_k}")
+plt.legend()
+plt.show()
