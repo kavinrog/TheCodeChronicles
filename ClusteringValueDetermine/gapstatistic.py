@@ -30,3 +30,6 @@ def compute_gap_statistic(X, k_max=10, B=10):
     optimal_k = np.argmax(gap_values) + 1
     
     return optimal_k, gap_values
+
+X, _ = make_blobs(n_samples=300, centers=5, cluster_std=1.0, random_state=42)
+optimal_k, gap_values = compute_gap_statistic(X, k_max=10)
