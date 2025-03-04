@@ -1,3 +1,14 @@
+"""
+Title: Gap Statistic for Optimal Clusters
+Author: Kavinder Roghit Kanthen
+Date: 03-03-2025
+Last Modified: 03-03-2025
+Description:
+This script uses the **Gap Statistic Method** to determine the optimal number 
+of clusters (K) by comparing actual clustering with random reference datasets. 
+It calculates the Gap value and selects the K that maximizes it, offering a 
+statistically sound alternative to the Elbow and Silhouette methods.
+"""
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
