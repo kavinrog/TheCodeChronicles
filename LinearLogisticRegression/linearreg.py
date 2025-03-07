@@ -1,47 +1,83 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+# Define the Linear Regression class
 class LinearRegression:
     
-    def __init__(self,learning_rate = 0.001, iterations = 1000):
-        self.learning_rate= learning_rate
+    def __init__(self, learning_rate=0.001, iterations=1000):
+        """
+        Initializes the Linear Regression model.
+
+        Parameters:
+        learning_rate : float - Step size for gradient descent
+        iterations : int - Number of iterations for training
+        """
+        self.learning_rate = learning_rate
         self.iterations = iterations
         self.weights = None
         self.bias = None
         
     def fit(self, X, y):
-        n_samples , n_features = X.shape
+        """
+        Trains the Linear Regression model using Gradient Descent.
+
+        Parameters:
+        X : numpy array - Training data (features)
+        y : numpy array - Labels (target values)
+        """
+        n_samples, n_features = X.shape
+        # Initialize weights and bias to zero
         self.weights = np.zeros(n_features)
         self.bias = 0 
+
+        # Gradient Descent Optimization
         for i in range(self.iterations):
-            y_predicted = np.dot(X, self.weights)+self.bias
+            # Compute predicted values (y = Xw + b)
+            y_predicted = np.dot(X, self.weights) + self.bias
         
-            dw = (1/n_samples) * np.dot(X.T, (y_predicted- y))
-            db = (1/n_samples) * np.sum(y_predicted- y)
+            # Compute gradients
+            dw = (1 / n_samples) * np.dot(X.T, (y_predicted - y))  # Derivative w.r.t weights
+            db = (1 / n_samples) * np.sum(y_predicted - y)  # Derivative w.r.t bias
             
-            self.weights = self.weights - self.learning_rate * dw
-            self.bias = self.bias - self.learning_rate * db
+            # Update weights and bias
+            self.weights -= self.learning_rate * dw
+            self.bias -= self.learning_rate * db
             
     def predict(self, X):
+        """
+        Predicts output values using the trained model.
+
+        Parameters:
+        X : numpy array - Input data (features)
+
+        Returns:
+        Predicted target values.
+        """
         return np.dot(X, self.weights) + self.bias
 
-np.random.seed(42)
-n_sample = 100
-n_feature =  1    
+# Generate synthetic dataset
+np.random.seed(42)  # Ensure reproducibility
+n_sample = 100  # Number of data points
+n_feature = 1  # Number of features (1D input)
+
+# Generate random feature values
 X = 2 * np.random.randn(n_sample, n_feature)
-y = (7 + 3 * X + np.random.randn(n_sample, n_feature)).ravel()
 
+# Generate target values with some noise
+y = (7 + 3 * X + np.random.randn(n_sample, n_feature)).ravel()  # Flatten to 1D array
+
+# Initialize and train the linear regression model
 model = LinearRegression()
-model.fit(X,y)
-y_pred = model.predict(X)
-print(y_pred)
+model.fit(X, y)
 
-# Plot the results
-plt.scatter(X, y, color='blue', label='Actual data')
-plt.plot(X, y_pred, color='red', label='Predicted line')
-plt.xlabel('X')
-plt.ylabel('y')
-plt.legend()
-plt.show()
-            
-        
+# Predict target values using the trained model
+y_pred = model.predict(X)
+print(y_pred)  # Print predicted values
+
+# Plot the actual data and the regression line
+plt.scatter(X, y, color='blue', label='Actual data')  # Scatter plot of actual data
+plt.plot(X, y_pred, color='red', label='Predicted line')  # Regression line
+plt.xlabel('X')  # Label x-axis
+plt.ylabel('y')  # Label y-axis
+plt.legend()  # Show legend
+plt.show()  # Display the plot
