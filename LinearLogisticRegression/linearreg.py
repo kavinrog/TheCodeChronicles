@@ -1,3 +1,13 @@
+"""
+Linear Regression from Scratch
+
+Author: Kavinder Roghit Kanthen
+Date: 03-06-2025
+Last Modified: 03-06-2025
+
+Description:
+linear_regression.py - Implements a simple linear regression model using gradient descent for predicting continuous values.
+"""
 import numpy as np
 import matplotlib.pyplot as plt
 

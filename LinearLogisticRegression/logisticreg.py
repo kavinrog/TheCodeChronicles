@@ -1,3 +1,12 @@
+"""
+Logistic Regression from Scratch
+
+Author: Kavinder Roghit Kanthen
+Date: 03-06-2025
+Last Modified: 03-06-2025
+
+Description:
+logistic_regression.py - Implements a logistic regression model for binary classification using the sigmoid function."""
 import numpy as np 
 import matplotlib.pyplot as plt 
 
