@@ -35,7 +35,7 @@ To evaluate the model, we generate a **synthetic dataset** with two distinct cla
 - The **decision boundary** is visualized with a **color-filled background**.  
 
 ### **SVM Decision Boundary Plot**  
-![SVM Decision Boundary](./SVM_Decision_Boundary.png)  
+![SVM Decision Boundary](./SVMPlot.png)  
 
 This plot helps visualize how well the SVM classifier separates the two classes.
 
@@ -45,7 +45,7 @@ This plot helps visualize how well the SVM classifier separates the two classes.
 ### **1️⃣ Clone the Repository**  
 ```bash
 git clone https://github.com/kavinrog/TheCodeChronicles.git
-cd SVM-From-Scratch
+cd SVM
 ```
 
 ### **2️⃣ Install Dependencies**  
