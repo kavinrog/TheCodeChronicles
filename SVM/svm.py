@@ -1,3 +1,14 @@
+"""
+Support Vector Machine (SVM) from Scratch
+
+Author: Kavinder Roghit Kanthen
+Date: 03-09-2025
+Last Modified: 03-09-2025
+
+Description:
+svm.py - Implements a Support Vector Machine (SVM) classifier using Stochastic Gradient Descent (SGD) 
+for binary classification. The model is trained using the hinge loss function and L2 regularization.
+"""
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
