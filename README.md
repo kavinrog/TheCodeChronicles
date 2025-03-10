@@ -14,7 +14,7 @@ Welcome to **TheCodeChronicles**! This repository is all about exploring and exp
 4. **Linear & Logistic Regression from Scratch**
   - Linear Regression predicts continuous values using a straight-line equation optimized by gradient descent, while Logistic Regression performs binary classification by applying the sigmoid function to a linear model.
 5. **Support Vector Machine (SVM) from Scratch**
-    - Implements a Support Vector Machine (SVM) classifier using Stochastic Gradient Descent (SGD)for binary classification. The model is trained using the hinge loss function and L2 regularization.
+  - Implements a Support Vector Machine (SVM) classifier using Stochastic Gradient Descent (SGD)for binary classification. The model is trained using the hinge loss function and L2 regularization.
 
 More projects coming soon! Stay tuned. 🚀
 
