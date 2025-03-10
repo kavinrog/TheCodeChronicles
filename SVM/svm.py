@@ -1,4 +1,7 @@
 import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+
 
 class SVM:
     
@@ -29,3 +32,31 @@ class SVM:
     def predict(self, X):
         approx = np.dot(X, self.weights) + self.bias
         return np.sign(approx)
+    
+np.random.seed(42)
+num_samples = 100
+
+X_class1 = np.random.randn(num_samples // 2, 2) - 2
+y_class1 = np.full((num_samples // 2,), -1)
+
+X_class2 = np.random.randn(num_samples // 2, 2) + 2
+y_class2 = np.full((num_samples // 2,), 1)
+
+X = np.vstack((X_class1, X_class2))
+y = np.hstack((y_class1, y_class2))
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+svm = SVM()
+svm.fit(X_train, y_train)
+
+y_pred = svm.predict(X_test)
+
+plt.figure(figsize=(8, 6))
+plt.scatter(X_class1[:, 0], X_class1[:, 1], color='red', label='Class -1')
+plt.scatter(X_class2[:, 0], X_class2[:, 1], color='blue', label='Class 1')
+plt.xlabel("Feature 1")
+plt.ylabel("Feature 2")
+plt.title("Toy Dataset for SVM")
+plt.legend()
+plt.show()
