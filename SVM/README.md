@@ -1,4 +1,4 @@
-# 🚀 Support Vector Machine (SVM) from Scratch  
+# Support Vector Machine (SVM) from Scratch  
 
 A simple **Support Vector Machine (SVM) classifier** implemented from scratch using **NumPy** and **Stochastic Gradient Descent (SGD)** for training. This project includes **model training, prediction, and decision boundary visualization**.
 
