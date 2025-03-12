@@ -1,4 +1,5 @@
 import numpy as np 
+import matplotlib.pyplot as plt
 
 class DeepNNScratch:
     def __init__(self, input_size, output_size, hidden_size, iteration = 1000, learning_rate = 0.001):
@@ -43,9 +44,20 @@ class DeepNNScratch:
         self.b2 -= self.learning_rate * db2   
         
     def fit(self, X, y):
+        self.loss_history = []  
+
         for _ in range(self.iteration):
-            output = self.forward(X)    
+            output = self.forward(X)
+            loss = np.mean((y - output) ** 2)  
+            self.loss_history.append(loss)
             self.backward(X, y, output)
+
+    def plot_loss(self):
+        plt.plot(self.loss_history)
+        plt.xlabel("Iterations")
+        plt.ylabel("Loss")
+        plt.title("Training Loss Over Time")
+        plt.show()
     
     def predict(self, X):
         output = self.forward(X)
