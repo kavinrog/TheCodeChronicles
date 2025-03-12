@@ -12,5 +12,11 @@ class DeepNNScratch:
         self.b1 = np.zeros(1, self.hidden_size)
         self.W2 = np.random.randn(self.hidden_size, self.output_size)
         self.b2 = np.zeros(1, self.output_size)
+    
+    def sigmoid(self, x):
+        return (1 / 1 + np.exp(-x))
+    
+    def derivation_sigmoid(self, z):
+        return z * (1-z)
         
         
