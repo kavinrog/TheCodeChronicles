@@ -40,7 +40,16 @@ class DeepNNScratch:
         self.W1 -= self.learning_rate * dW1        
         self.b1 -= self.learning_rate * db1      
         self.W2 -= self.learning_rate * dW2       
-        self.b2 -= self.learning_rate * db2       
+        self.b2 -= self.learning_rate * db2   
+        
+    def fit(self, X, y):
+        for _ in range(self.iteration):
+            output = self.forward(X)    
+            self.backward(X, y, output)
+    
+    def predict(self, X):
+        output = self.forward(X)
+        return np.where(output > 0.5, 1, 0)
         
         
            
