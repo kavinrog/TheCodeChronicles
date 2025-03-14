@@ -29,4 +29,13 @@ class DeepNNScratch:
     def derivation_sigmoid(self, z):
         return z * (1-z)
     
+    def forward(self, X):
+        self.Z1 = np.dot(X, self.W1) + self.b1
+        self.A1 = self.relu(self.Z1)
+        self.Z2 = np.dot(self.A1, self.W2) + self.b2
+        self.A2 = self.relu(self.Z2)
+        self.Z3 = np.dot(self.A2 , self.W3) + self.b3
+        self.A3 = self.sigmoid(self.Z3)
+        return self.A3
+    
    
