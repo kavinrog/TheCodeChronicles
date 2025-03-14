@@ -44,11 +44,11 @@ class DeepNNScratch:
         dW3 = (1/n_samples) * np.dot(self.A2.T, dZ3)
         db3 = (1/n_samples) * np.sum(dZ3, axis = 0, keepdims= True)
         
-        dZ2 = np.dot(dZ3, self.W3.T) * self.derivative_relu(dZ3)
+        dZ2 = np.dot(dZ3, self.W3.T) * self.derivative_relu(self.A2)
         dW2 = (1/n_samples) * np.dot(self.A1.T, dZ2)
         db2 = (1/n_samples) * np.sum(dZ2, axis=0, keepdims=True)
         
-        dZ1 = np.dot(dZ2, self.W2.T) * self.derivative_relu(dZ2)
+        dZ1 = np.dot(dZ2, self.W2.T) * self.derivative_relu(self.A1)
         dW1 = (1/n_samples) * np.dot(X.T, dZ1)
         db1= (1/n_samples) * np.sum(dZ1, axis= 0 , keepdims= True)
         
