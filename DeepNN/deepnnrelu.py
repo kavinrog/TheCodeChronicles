@@ -17,4 +17,16 @@ class DeepNNScratch:
         self.W3 = np.random.rand(self.hidden_size2, self.output_size)
         self.b3 = np.zeros((1, self.output_size))
     
+    def relu(self, z):
+        return np.maximum(0,z)
     
+    def derivative_relu(self, z):
+        return (z > 0).astype(float)
+        
+    def sigmoid(self, x):
+        return (1 /(1 + np.exp(-x)))
+    
+    def derivation_sigmoid(self, z):
+        return z * (1-z)
+    
+   
