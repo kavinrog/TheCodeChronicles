@@ -59,3 +59,8 @@ class DeepNNScratch:
         self.W3 -= self.learning_rate * dW3
         self.b3 -= self.learning_rate * db3
         
+    def fit(self, X, y):
+        for _ in range(self.iteration):
+            output = self.forward(X)
+            self.backward(X, y, output)
+        
