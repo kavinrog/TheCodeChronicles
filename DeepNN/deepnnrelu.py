@@ -38,4 +38,24 @@ class DeepNNScratch:
         self.A3 = self.sigmoid(self.Z3)
         return self.A3
     
-   
+    def backward(self, X, y, output):
+        n_samples = X.shape[0]
+        dZ3 = output - y 
+        dW3 = (1/n_samples) * np.dot(self.A2.T, dZ3)
+        db3 = (1/n_samples) * np.sum(dZ3, axis = 0, keepdims= True)
+        
+        dZ2 = np.dot(dZ3, self.W3.T) * self.derivative_relu(dZ3)
+        dW2 = (1/n_samples) * np.dot(self.A1.T, dZ2)
+        db2 = (1/n_samples) * np.sum(dZ2, axis=0, keepdims=True)
+        
+        dZ1 = np.dot(dZ2, self.W2.T) * self.derivative_relu(dZ2)
+        dW1 = (1/n_samples) * np.dot(X.T, dZ1)
+        db1= (1/n_samples) * np.sum(dZ1, axis= 0 , keepdims= True)
+        
+        self.W1 -= self.learning_rate * dW1
+        self.b1 -= self.learning_rate * db1
+        self.W2 -= self.learning_rate * dW2
+        self.b2 -= self.learning_rate * db2
+        self.W3 -= self.learning_rate * dW3
+        self.b3 -= self.learning_rate * db3
+        
