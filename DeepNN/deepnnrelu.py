@@ -60,9 +60,18 @@ class DeepNNScratch:
         self.b3 -= self.learning_rate * db3
         
     def fit(self, X, y):
+        self.loss_history = []
         for _ in range(self.iteration):
             output = self.forward(X)
+            self.loss_history.append(np.mean(output-y)**2)
             self.backward(X, y, output)
+    
+    def plot_loss(self):
+        plt.plot(self.loss_history)
+        plt.xlabel("Iterations")
+        plt.ylabel("Loss")
+        plt.title("Training Loss Over Time")
+        plt.show()
     
     def predict(self, X):
         pred = self.forward(X)
