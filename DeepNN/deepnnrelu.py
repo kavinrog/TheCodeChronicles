@@ -63,4 +63,8 @@ class DeepNNScratch:
         for _ in range(self.iteration):
             output = self.forward(X)
             self.backward(X, y, output)
+    
+    def predict(self, X):
+        pred = self.forward(X)
+        return np.where(pred > 0.5, 1, 0)
         
