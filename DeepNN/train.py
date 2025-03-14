@@ -1,5 +1,7 @@
+import argparse
 from dataset import load_data
-from deepnn import DeepNNScratch
+from deepnn import DeepNNScratch as dnnworelu
+from deepnnrelu import DeepNNScratch as dnnwithrelu
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -18,19 +20,36 @@ def plot_decision_boundary(model, X, y):
     plt.ylabel("Feature 2")
     plt.title("Decision Boundary")
     plt.show()
-    
-    
+
+# Parse command-line argument for model selection
+parser = argparse.ArgumentParser(description="Train a neural network model.")
+parser.add_argument("--model", type=str, choices=["dnnworelu", "dnnwithrelu"], required=True,
+                    help="Choose model: 'dnnworelu' for DeepNNScratch without ReLU, 'dnnwithrelu' for DeepNNScratch with ReLU")
+args = parser.parse_args()
+
+# Load dataset
 X_train, X_test, y_train, y_test = load_data()
 
-nn = DeepNNScratch(input_size=2, output_size=1, hidden_size=4, iteration=2000, learning_rate=0.01)
+# Select model based on command-line argument
+if args.model == "dnnworelu":
+    print("Using Model: DeepNNScratch **without ReLU activation**")
+    nn = dnnworelu(input_size=2, output_size=1, hidden_size=4, iteration=2000, learning_rate=0.01)
+else:
+    print("Using Model: DeepNNScratch **with ReLU activation**")
+    nn = dnnwithrelu(input_size=2, output_size=1, hidden_size1=4, hidden_size2 = 4, iteration=2000, learning_rate=0.01)
 
+# Train model
 print("Training the model...")
 nn.fit(X_train, y_train)
 
-nn.plot_loss()
+# Plot loss if applicable
+if hasattr(nn, "plot_loss"):
+    nn.plot_loss()
 
+# Plot decision boundary
 plot_decision_boundary(nn, X_train, y_train)
 
+# Evaluate model
 y_pred_train = nn.predict(X_train)
 y_pred_test = nn.predict(X_test)
 
