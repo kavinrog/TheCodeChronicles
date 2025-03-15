@@ -9,4 +9,6 @@ class KNN:
         self.X_train = X 
         self.Y_train = Y
         
+    def eucledian_distance(self, X, X1):
+        return np.sqrt(np.sum((X, X1) ** 2))  
     
