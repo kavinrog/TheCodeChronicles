@@ -41,7 +41,7 @@ python main.py --model dnnwithrelu
 
 | Loss Plot | Decision Boundary |
 |-----------|-------------------|
-| ![Loss](./images/Training%20Loss%20Over%20Time%20without%20ReLU.png.png) | ![Decision](./images/Decision%20Boundary%20of%20Data%20without%20ReLU.png.png) |
+| ![Loss](./images/Training%20Loss%20Over%20Time%20without%20ReLU.png) | ![Decision](./images/Decision%20Boundary%20of%20Data%20without%20ReLU.png) |
 
 ## Example Outputs with ReLU
 
