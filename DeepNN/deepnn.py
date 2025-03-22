@@ -1,3 +1,20 @@
+"""
+deepnn.py -  Basic Feedforward Neural Network from Scratch (NumPy)
+
+This Python class `DeepNNScratch` implements a simple neural network with:
+- One hidden layer using sigmoid activation
+- Output layer for binary classification
+- Forward and backward propagation logic
+- Manual gradient descent updates using MSE loss
+- Visualization of training loss over iterations
+
+Functions:
+- `fit(X, y)`: Trains the model
+- `predict(X)`: Outputs binary predictions
+- `plot_loss()`: Plots training loss curve
+
+This is a lightweight and educational implementation to understand the internals of neural network training without using high-level libraries like TensorFlow or PyTorch.
+"""
 import numpy as np 
 import matplotlib.pyplot as plt
 

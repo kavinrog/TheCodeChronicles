@@ -1,3 +1,23 @@
+"""
+deepnnrelu.py -  Deep Neural Network from Scratch with ReLU (NumPy)
+
+This Python class `DeepNNScratch` implements a fully connected feedforward neural network using NumPy. 
+It supports:
+- Two hidden layers with ReLU activation
+- Output layer with sigmoid activation for binary classification
+- Forward and backward propagation
+- Manual weight updates using gradient descent
+- Loss tracking and visualization via Matplotlib
+
+The model is trained using mean squared error and supports prediction and plotting training loss over time.
+
+Usage:
+- Initialize with input, hidden, and output layer sizes
+- Call `fit(X, y)` to train on your dataset
+- Use `predict(X)` for inference
+- Use `plot_loss()` to visualize training progress
+"""
+
 import numpy as np 
 import matplotlib.pyplot as plt
 

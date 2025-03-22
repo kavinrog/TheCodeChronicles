@@ -1,3 +1,21 @@
+"""
+train.py – Model Training Wrapper
+
+This script handles the training and evaluation of two neural network implementations:
+1. A basic neural network using only sigmoid activation.
+2. A deeper neural network using ReLU in hidden layers.
+
+It:
+- Loads the dataset from `dataset.py`
+- Initializes the model based on user selection (via argparse)
+- Trains the model and plots loss
+- Visualizes the decision boundary
+- Prints training and testing accuracy
+
+To use:
+python train.py --model dnnworelu     # Train sigmoid-only model  
+python train.py --model dnnwithrelu   # Train ReLU-activated model
+"""
 import argparse
 from dataset import load_data
 from deepnn import DeepNNScratch as dnnworelu
