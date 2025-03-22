@@ -17,6 +17,8 @@ Welcome to **TheCodeChronicles**! This repository is all about exploring and exp
   - Implements a Support Vector Machine (SVM) classifier using Stochastic Gradient Descent (SGD)for binary classification. The model is trained using the hinge loss function and L2 regularization.
 6. **Regression Analysis with Scikit-Learn**
   - Implements various regression techniques using Scikit-Learn and other relevant Python libraries.
+7. **Deep Neural Network from Scratchn**
+  - This project implements two versions of a Deep Neural Network (DNN) from scratch using NumPy
 
 More projects coming soon! Stay tuned. 🚀
 
