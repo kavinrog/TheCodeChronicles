@@ -1,3 +1,6 @@
+# K-Nearest Neighbors (KNN) Classifier from scratch using NumPy
+# This model stores training data and predicts labels based on the majority class 
+# of the k-nearest neighbors using Euclidean distance.
 import numpy as np 
 from collections import Counter
 
