@@ -28,3 +28,10 @@ class KNN:
         most_common = Counter(k_nearest_labels).most_common(1)
         
         return most_common[0][0]
+
+from sklearn.model_selection import train_test_split
+from sklearn.datasets import load_iris
+
+iris = load_iris()
+X = iris.data
+y = iris.target
